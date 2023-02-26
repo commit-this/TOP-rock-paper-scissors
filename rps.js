@@ -1,14 +1,17 @@
 function getComputerChoice() {
+    // returns a random choice from rock paper scissors
     const choices = ["Rock", "Paper", "Scissors"];
     return choices[Math.floor(Math.random() * choices.length)];
 }
 
 function playRound(playerSelection, computerSelection) {
-    // 
+    // function that takes player and computer choices and returns a string detailing the result
+    // TODO: make sure the player inputs rock paper or scissors only
+    
+    // capitalize the player selection
     playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase();
     const loseMessage = `You Lose! ${computerSelection} beats ${playerSelection}`;
     const winMessage = `You Win! ${playerSelection} beats ${computerSelection}`;
-
 
     return playerSelection === "Rock" && computerSelection === "Paper" ? loseMessage
             : playerSelection === "Paper" && computerSelection === "Scissors" ? loseMessage
@@ -30,9 +33,9 @@ function game() {
         let computerSelection = getComputerChoice();
         let result = playRound(playerSelection, computerSelection);
         if (result.includes("Win")) {
-            ++playerScore;
+            playerScore++;
         } else if (result.includes("Lose")) {
-            ++computerScore;
+            computerScore++;
         }
         console.log(result);
     }
