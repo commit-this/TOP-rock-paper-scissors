@@ -5,7 +5,7 @@ function getComputerChoice() {
 }
 
 function playRound(e) {
-    // function that compares player and computer choices and displays the result as text on the html page
+    // compares player and computer choices and displays the result as text on the html page
 
     const playerSelection = e.target.id;
     const computerSelection = getComputerChoice();
@@ -41,7 +41,8 @@ function playRound(e) {
 }
 
 function reset(e) {
-    // function that resets scores and clears text on the html page
+    // resets scores and clears text on the html page
+    
     playerScore = 0;
     computerScore = 0;
     result.textContent = "";
