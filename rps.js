@@ -12,9 +12,8 @@ function playRound(e) {
     const result = document.querySelector(".result");
     const displayYourScore = document.querySelector(".playerScore");
     const displayComputerScore = document.querySelector(".computerScore");
+    const gameStatus = document.querySelector(".win");
 
-    let playerScore = 0;
-    let computerScore = 0;
     const loseMessage = `You Lose! ${computerSelection} beats ${playerSelection}`;
     const winMessage = `You Win! ${playerSelection} beats ${computerSelection}`;
 
@@ -31,10 +30,10 @@ function playRound(e) {
         computerScore += 1;
     }
     if (playerScore == 5) {
-        score.textContent = "Congratulations, you won 5 rounds";
+        gameStatus.textContent = "Congratulations, you won 5 rounds";
 
     } else if (computerScore == 5) {
-        score.textContent = "Sorry, you lost 5 rounds";
+        gameStatus.textContent = "Sorry, you lost 5 rounds";
     }
     result.textContent = `${resultText}`;
     displayYourScore.textContent = `Your score: ${playerScore}`;
@@ -42,6 +41,8 @@ function playRound(e) {
 
 }
 
+let playerScore = 0;
+let computerScore = 0;
 const buttons = document.querySelectorAll(".btn");
 buttons.forEach(button => button.addEventListener("click", playRound));
 
